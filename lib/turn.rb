@@ -1,5 +1,3 @@
-#require "./lib/card.rb"
-
 class Turn
     attr_reader :guess,
                 :card
@@ -7,22 +5,22 @@ class Turn
     def initialize(guess, card)
         @guess = guess
         @card = card
-        #@flag = nil
     end
         
     def correct?
-        if @card.answer == @guess
-            @flag = true
+        if card.answer == guess
+            true
         else
-            @flag = false
+            false
         end
     end
 
     def feedback
-        if @flag == true
+        if card.answer == guess
             "Correct!"
         else
             "Incorrect."
         end
     end
+
 end
